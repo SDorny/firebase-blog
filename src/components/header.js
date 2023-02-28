@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-const header = (active, setActive) => {
+const Header = ({active, setActive}) => {
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-light'>
         <div className='container-fluid bg-faded padding-media'>
@@ -21,11 +21,11 @@ const header = (active, setActive) => {
                     </button>
                     <div className='collapse navbar-collapse'>
                         <ul 
-                        className='navbar-nav me-auto mb-2 mb-lg-0' 
+                        className='navbar-nav col' 
                         id='navbarSupportedContent'
                         >
 
-                        <Link to="/" style={{textDecoration: "none"}}>
+                        <Link to="/" style={{ textDecoration: "none"}}>
                             <li 
                             className={`nav-item nav-link ${
                                 active === "home" ? "active" : ""
@@ -60,7 +60,9 @@ const header = (active, setActive) => {
 
                         </ul>
                         <div className='row g-3'>
-                            <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <ul 
+                            className='navbar-nav'
+                            >
                                 <Link to="/auth" style={{textDecoration: "none"}}>
                                     <li 
                                     className={`nav-item nav-link ${
@@ -81,4 +83,4 @@ const header = (active, setActive) => {
   )
 }
 
-export default header
+export default Header
